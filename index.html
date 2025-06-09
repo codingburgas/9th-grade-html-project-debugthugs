@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пожарна безопасност</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="libs/leaflet/leaflet.css">
+</head>
+<body>
+  <header>
+    <h1>Система за пожарна безопасност</h1>
+    <nav>
+      <button onclick="switchTheme()">🌙/☀️</button>
+      <ul>
+        <li><a href="#departments">Центрове</a></li>
+        <li><a href="#staff">Служители</a></li>
+        <li><a href="#vehicles">Автомобили</a></li>
+        <li><a href="#report">Докладване</a></li>
+        <li><a href="#stats">Статистика</a></li>
+        <li><a href="#map">Карта</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="departments"><h2>Пожарни центрове</h2></section>
+    <section id="staff"><h2>Служители</h2></section>
+    <section id="vehicles"><h2>Пожарни автомобили</h2></section>
+
+    <section id="report">
+      <h2>Докладвай произшествие</h2>
+      <form id="incident-form">
+        <input type="text" placeholder="Адрес" required>
+        <input type="text" placeholder="GPS координати" required>
+        <select>
+          <option>Пожар</option>
+          <option>Катастрофа</option>
+        </select>
+        <input type="text" placeholder="Екип">
+        <input type="text" placeholder="Автомобил">
+        <button type="submit">Изпрати</button>
+      </form>
+    </section>
+
+    <section id="stats">
+      <h2>Статистика</h2>
+      <canvas id="incidentChart"></canvas>
+    </section>
+
+    <section id="map">
+      <h2>Карта</h2>
+      <div id="mapid"></div>
+    </section>
+  </main>
+
+  <script src="libs/leaflet/leaflet.js"></script>
+  <script src="libs/chart.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/chart.js"></script>
+</body>
+</html>
