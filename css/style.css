@@ -1,0 +1,40 @@
+:root {
+  --bg: #fff;
+  --fg: #111;
+}
+
+[data-theme="dark"] {
+  --bg: #111;
+  --fg: #fff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+header {
+  background: crimson;
+  color: white;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+#mapid {
+  height: 400px;
+  margin-top: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  gap: 0.5rem;
+}
