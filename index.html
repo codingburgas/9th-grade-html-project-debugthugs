@@ -15,9 +15,7 @@
     <nav>
       <button onclick="switchTheme()">🌙/☀️</button>
       <ul>
-        <li><a href="#departments">Центрове</a></li>
-        <li><a href="#staff">Служители</a></li>
-        <li><a href="#vehicles">Автомобили</a></li>
+        <li><a href="#staff">Центрове</a></li>
         <li><a href="#report-map">Докладване и карта</a></li>
         <li><a href="#stats">Статистика</a></li>
       </ul>
@@ -25,12 +23,8 @@
   </header>
 
   <main>
-    <section id="departments">
-      <h2>Пожарни центрове</h2>
-    </section>
-
     <section id="staff">
-      <h2>Служители</h2>
+      <h2>Пожарни центрове</h2>
 
 
       <div class="station">
@@ -199,26 +193,22 @@
       </div>
     </section>
 
-    <section id="vehicles">
-      <h2>Пожарни автомобили</h2>
-    </section>
-
     <section id="report-map">
-  <h2>Докладвай произшествие</h2>
-  <div class="report-map-container">
-    <div class="report-form">
-      <input type="text" id="addressSearch" placeholder="Търси адрес...">
-      <select id="incident-type" required>
-        <option value="">Вид произшествие</option>
-        <option value="Пожар">Пожар</option>
-        <option value="Катастрофа">Катастрофа</option>
-      </select>
-      <p id="assigned-team">Изберете място на картата</p>
-      <button id="submit-report">Изпрати</button>
-    </div>
-    <div id="mapid" class="map-embed"></div>
-  </div>
-</section>
+      <h2>Докладвай произшествие</h2>
+      <div class="report-map-container">
+        <div class="report-form">
+          <input type="text" id="addressSearch" placeholder="Търси адрес...">
+          <select id="incident-type" required>
+            <option value="">Вид произшествие</option>
+            <option value="Пожар">Пожар</option>
+            <option value="Катастрофа">Катастрофа</option>
+          </select>
+          <p id="assigned-team">Изберете място на картата</p>
+          <button id="submit-report">Изпрати</button>
+        </div>
+        <div id="mapid" class="map-embed"></div>
+      </div>
+    </section>
 
     <section id="stats">
       <h2>Статистика</h2>
@@ -226,13 +216,13 @@
     </section>
   </main>
 
-  
+
   <script src="libs/leaflet/leaflet.js"></script>
   <script src="libs/chart.js/chart.js"></script>
   <script src="js/firestations.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/map.js"></script>
   <script src="js/chart.js"></script>
+  <script src="js/map.js"></script>
 </body>
 
 </html>

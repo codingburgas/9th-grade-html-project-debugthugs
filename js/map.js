@@ -73,28 +73,41 @@ function getAvailableTeam(station) {
   }
   return null;
 }
+
 function loadAndRenderReports() {
   const now = Date.now();
   const oneHour = 60 * 60 * 1000;
 
-  const stored = JSON.parse(localStorage.getItem('fireReports') || '[]');
-  const activeReports = [];
+  let reports = JSON.parse(localStorage.getItem('fireReports') || '[]');
+  let teamAvailability = JSON.parse(localStorage.getItem('teamAvailability') || '{}');
 
-  for (const report of stored) {
-    const time = new Date(report.timestamp).getTime();
-    if (now - time <= oneHour) {
-      // Still active
-      activeReports.push(report);
+  reports = reports.map(report => {
+    const reportTime = new Date(report.timestamp).getTime();
+    const isExpired = now - reportTime > oneHour;
 
+    if (isExpired && report.active) {
+      report.active = false;
+
+      // Free team if assigned
+      if (report.team && teamAvailability[report.team]) {
+        delete teamAvailability[report.team];
+      }
+    }
+
+    // Only render active markers
+    if (report.active) {
       L.marker([report.lat, report.lng])
         .addTo(map)
         .bindPopup(`${report.type}<br>${report.team}<br>${new Date(report.timestamp).toLocaleString()}`);
     }
-  }
 
-  // Update localStorage with only active reports
-  localStorage.setItem('fireReports', JSON.stringify(activeReports));
+    return report;
+  });
+
+  localStorage.setItem('fireReports', JSON.stringify(reports));
+  localStorage.setItem('teamAvailability', JSON.stringify(teamAvailability));
 }
+
 
 function initReportMap() {
   loadAvailabilityFromStorage();
@@ -153,12 +166,12 @@ document.getElementById('submit-report').addEventListener('click', function () {
   saveAvailabilityToStorage();
 
   const report = {
-    type,
     lat: selectedCoords.lat,
     lng: selectedCoords.lng,
-    station: currentStation.name,
+    type,
     team: assignedTeam,
-    timestamp: new Date(now).toISOString()
+    timestamp: new Date().toISOString(),
+    active: true
   };
 
   const reports = JSON.parse(localStorage.getItem('fireReports') || '[]');
@@ -170,4 +183,6 @@ document.getElementById('submit-report').addEventListener('click', function () {
   L.marker([report.lat, report.lng])
     .addTo(map)
     .bindPopup(`${report.type}<br>${report.team}<br>${new Date(report.timestamp).toLocaleString()}`);
+
+  updateChart();
 });
