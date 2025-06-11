@@ -10,9 +10,7 @@
 </section>
 <p align = "center"></p>
 <hr>
-<h2>📷Screenshots</h2>
-<p align = "center"><img src = "#" width = #>
-<img src = "/Assets/Screenshot.jpg" alt = "Settings screenshot" width = 600px>
+
 </p>
 <hr>
 <h2>📥Installation</h2>
