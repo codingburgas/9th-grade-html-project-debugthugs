@@ -1,13 +1,13 @@
-/* Root variables for light and dark themes */
+
 :root {
   --primary-bg: #f5f6f5;
   --primary-fg: #1e2a44;
-  --accent-color: #e31b23; /* Vibrant firetruck red */
-  --secondary-accent: #1a3c6d; /* Deep navy for contrast */
-  --highlight-color: #ff8c00; /* Fiery orange for highlights */
-  --success-color: #2ecc71; /* Bright green for free status */
-  --warning-color: #f1c40f; /* Bold yellow for pending status */
-  --danger-color: #c0392b; /* Deep red for incident status */
+  --accent-color: #e31b23; 
+  --secondary-accent: #1a3c6d;
+  --highlight-color: #ff8c00; 
+  --success-color: #2ecc71;
+  --warning-color: #f1c40f;
+  --danger-color: #c0392b;
   --card-bg: #ffffff;
   --border-color: #e0e4e8;
   --shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -24,7 +24,6 @@
   --gradient: linear-gradient(135deg, #b7151c, #d35400);
 }
 
-/* Global styles */
 * {
   margin: 0;
   padding: 0;
@@ -40,7 +39,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Header and Navigation */
+
 header {
   background: var(--gradient);
   color: #ffffff;
@@ -118,7 +117,6 @@ nav button:hover {
   transform: translateY(-2px);
 }
 
-/* Main content */
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -164,7 +162,6 @@ section h2::after {
   background: var(--highlight-color);
 }
 
-/* Form styles */
 form {
   display: grid;
   gap: 1.2rem;
@@ -210,9 +207,7 @@ form button {
 form button:hover {
   background: var(--secondary-accent);
   transform: translateY(-2px);
-}
-
-/* Map styles */
+} 
 #mapid {
   height: 600px;
   border-radius: 12px;
@@ -221,7 +216,7 @@ form button:hover {
   border: 2px solid var(--border-color);
 }
 
-/* Chart section */
+
 #stats canvas {
   max-width: 100%;
   height: auto;
@@ -231,7 +226,7 @@ form button:hover {
   box-shadow: var(--shadow);
 }
 
-/* Status indicators */
+
 .status-free {
   color: var(--success-color);
   font-weight: 600;
@@ -256,7 +251,6 @@ form button:hover {
   border-radius: 4px;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   header {
     padding: 1.5rem;
@@ -300,7 +294,6 @@ form button:hover {
   }
 }
 
-/* Accessibility enhancements */
 :focus {
   outline: 3px solid var(--highlight-color);
   outline-offset: 3px;
@@ -310,7 +303,7 @@ a, button {
   cursor: pointer;
 }
 
-/* Creative animations */
+
 section {
   opacity: 0;
   transform: translateY(30px);
@@ -347,7 +340,7 @@ nav ul li:nth-child(6) { --i: 6; }
   }
 }
 
-/* Hover effects for sections */
+
 section:hover {
   transform: translateY(-5px);
   transition: var(--transition);
