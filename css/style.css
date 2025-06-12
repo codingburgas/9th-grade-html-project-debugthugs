@@ -352,3 +352,36 @@ section:hover {
   transform: translateY(-5px);
   transition: var(--transition);
 }
+
+.station {
+  margin-bottom: 3rem;
+}
+
+.station h3 {
+  font-size: 1.5rem;
+  color: var(--secondary-accent);
+  margin-bottom: 1rem;
+}
+
+.team {
+  background: rgba(0, 0, 0, 0.03);
+  border-left: 4px solid var(--accent-color);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+.team h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+  color: var(--primary-fg);
+}
+
+.team ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.team li {
+  margin-bottom: 0.4rem;
+}
